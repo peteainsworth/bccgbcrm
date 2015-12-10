@@ -1,0 +1,1662 @@
+/**
+ * $Id: theme.css,v 1.1.2.19 2010/03/23 03:29:25 jmburnz Exp $
+ * adaptivethemes.com
+ *
+ * @file theme.css
+ * theme.css is the file to use when building your theme. 
+ * Make a copy first as a backup.
+ */
+
+/**********************************************************
+ *                    HTML & Body
+ **********************************************************/
+html {}
+body {background-color: #F4FBEC;}
+
+/* Admin menu */
+body.admin-menu {}
+body.admin-menu #container {}
+
+/**********************************************************
+ *                 HTML Elements
+ **********************************************************/
+h1 {}
+h2 {}
+h3 {font-weight: bold;color: #96A533; font-size: 160%;
+    font-weight: normal;
+    line-height: 120%;
+    padding: 0;}
+h4 {}
+h5 {}
+h6 {}
+
+p {}
+
+strong {}
+em, dfn {}
+dfn {}
+
+sup, sub {}
+
+del {}
+ins {}
+
+blockquote {}
+cite {}
+q {}
+
+address {}
+
+ul {}
+ol {}
+li {}
+
+dl {}
+dd {}
+dt {}
+
+abbr {}
+acronym {}
+
+pre, code, tt {}
+p code {}
+samp {}
+kbd {}
+var {}
+
+
+/**********************************************************
+ *                 Global Link Styles
+ **********************************************************/
+a {color:#304713;text-decoration:none;}
+a:link    {color:#304713;text-decoration:none;}
+a:visited {text-decoration:none;}
+a:hover   {text-decoration:underline;color:#304713;}
+a:active  {text-decoration:underline;}
+a.active  {text-decoration:underline;}
+
+/* Set global a:active and a:focus styles. */
+a:active,
+a:focus {text-decoration:underline;color:#304713;}
+
+/**********************************************************
+ *                    Body Classes
+ **********************************************************/
+ /* NOTE: these are not active by default; you need to 
+    enable them in the Advanced theme settings. */
+
+/* Front or not front. */
+.front {}
+.not-front {}
+
+/* Is the user logged in. */
+.logged-in {}
+.not-logged-in {}
+
+/* Content type body classes. */
+.article-type-book  {}
+.article-type-blog  {}
+.article-type-forum {}
+.article-type-page  {}
+.article-type-poll  {}
+.article-type-story {}
+
+	
+/**********************************************************
+ *                  The wrapper divs
+ *    Be careful how you modify these, see layout.css
+ **********************************************************/
+#container {
+	min-width: 984px;
+    width: 100%;
+}
+
+/* Column wrappers */
+#columns {
+    margin: 0 auto;
+}
+.columns-inner {padding-top: 1em;}
+
+/* Content wrappers */
+#content-column {}
+.content-inner {}
+
+/* Main content wrappers*/
+#main-content { 
+	background:none repeat scroll 0 0 #FFFFFF;
+	padding: 1em 1em 0.1em;
+    display: inline-block;
+    width: 98%;
+}
+
+/**********************************************************
+ *                       Regions
+ **********************************************************/
+/* Leaderboard is a full width region at the very top of the page. */
+#leaderboard {}
+
+/* Header region is embedded in the header, floated between the logo/site_name
+   and the search box. */
+#header-region {
+	float: none;
+    margin-right: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 600px;
+}
+#user-login-form #edit-name-wrapper {width:160px;}
+#user-login-form #edit-pass-wrapper {width:90px;}
+#user-login-form {
+	position: absolute;
+	right: 4px;
+	top:4px;
+}
+/* Menu Bar sits below the header and is ideal for dynamic menus 
+   such as http://drupal.org/project/superfish. */
+#menu-bar {background:none repeat scroll 0 0 #2C4712;height:37px;}
+
+/* Secondary content is a full width region between the header and the
+   main columns. */
+#secondary-content {
+    margin: 0 auto;
+    padding-left: 2em;
+    padding-top: 1em;
+    width: 1050px;
+}
+#secondary-content .block{
+	margin:0;
+}
+#secondary-content .block-inner {
+    padding: 0;
+}
+/* Tertiary content is a full width region above the footer, below the
+   main content. */
+#tertiary-content {
+	margin: 0 auto;
+    padding-left: 2em;
+    padding-top: 1em;
+    width: 1050px;
+}
+
+/* Content top and bottom are above and below the main content, within the main 
+   content column. Content aside floats to the right within the main central
+   column, but below content top. */
+#content-top {width: 984px;}
+#content-aside {}
+#content-bottom {}
+
+/* Article aside appears only in articles (nodes). By default its placed at
+   the bottom of the node.tpl.php template. */
+#article-aside {}
+
+
+/**********************************************************
+ *                      Sidebars
+ **********************************************************/
+/* Target both sidebars with this low specifity selector. */
+.sidebar {}
+
+/* Target a specific sidebar. */
+#sidebar-first {margin-left: -96%;}
+#sidebar-last {}
+
+
+/**********************************************************
+ *                   Skip navigation
+ **********************************************************/
+/**
+ * DO NOT USE display:none as this hides it from screen readers!
+ */
+#skip-nav {}
+
+/* Override default pseudo class styles */
+#skip-nav a:link    {}
+#skip-nav a:visited {}
+#skip-nav a:hover   {}
+#skip-nav a:focus   {}
+#skip-nav a:active  {}
+
+
+/**********************************************************
+ *                 Header Elements
+ **********************************************************/
+/* #header wraps #branding, #search-box-top and #header-blocks. */
+#header {
+	background:url("../images/header-bar.png") repeat-x scroll 0 0 #020C02;;
+	height:98px;
+}
+
+/* #branding wraps #logo, #site-name and #site-slogan. */
+#branding {}
+
+/* Logo and Site Name wrapper. */
+.logo-site-name {}
+
+/* Logo and Site Name wrapper h1 - normally applies only the homepage. */
+h1.logo-site-name  {}
+
+/* Logo and Site Name wrapper DIV - normally applies to all internal pages,
+   or where no title is set. */
+div.logo-site-name {}
+
+/* DIV/strong combo when when title is set. */
+div.logo-site-name strong {}
+
+/* By default the span is set to display:block, you can display:inline
+   or float the elements to get them all on one line. */
+.logo-site-name span {}
+
+/* Logo and Site Name SPAN wrappers. */
+span#logo {margin-top:6px;}
+span#site-name {
+	display: block;
+    height: 0;
+    overflow: hidden;
+    text-indent: -10000px;
+}
+
+/* Override default pseudo class styles. */
+#site-name a:link    {}
+#site-name a:visited {}
+#site-name a:hover   {}
+#site-name a:focus   {}
+#site-name a:active  {}
+
+/* Site slogan. */
+#site-slogan {}
+
+#user-login-form .item-list {
+	display: block;
+    height: 0;
+    overflow: hidden;
+    text-indent: -10000px;
+}
+#user-login-form #edit-name-wrapper input{width:160px;}
+#user-login-form label {font-weight:normal;color:#2C4712;}
+.search {position:relative;top:-36px;float:right;width:180px;}
+#user-login-form .form-submit {
+	background: none repeat scroll 0 0 #304713;
+    border: 2px solid #98A215;
+    color: #FEDB08;
+	cursor:pointer;
+	line-height: 1.5;
+	margin:0.8em 0.5em 0 1.8em;
+	width: 50px;
+}
+#user-login-form .form-submit:hover {
+    border: 2px solid #FEDB08;
+    color: #FEDB08;
+}
+
+.language-switcher {
+	position: absolute;
+    right: -2.6em;
+    top: 4.2em;
+}
+.language-switcher ul {
+	list-style:none;	
+}
+.language-switcher a {
+	color: #FEDB08;
+    text-decoration: none;
+}
+.language-switcher a:link    {
+	color: #FEDB08;
+    text-decoration: none;
+}
+.language-switcher a:visited {}
+.language-switcher a:hover   {text-decoration: underline;}
+.language-switcher a:focus   {}
+.language-switcher a:active  {
+    color: #FEDB08;
+    font-weight: bold;
+}
+.language-switcher a.active  {
+    color: #FEDB08;
+    font-weight: bold;
+}
+/**********************************************************
+ *    Search box, Advanced search form, Search results
+ *          For the search block see blocks.css
+ **********************************************************/
+/**
+ * Search box
+ */
+/* Float the serch box right. */
+#search-box {
+	position: absolute;
+	right: 4px;
+	top: 98px;
+	width: 220px;
+}
+
+/* Reset form element margins. */
+#search-theme-form {margin:0;}
+
+/* Wrapper DIVs */
+#search-theme-form > div {}
+#search-theme-form #search {}
+#edit-search-theme-form-1-wrapper {}
+
+#search-theme-form label {}
+#search-theme-form input {}
+
+#search-theme-form .form-text {width: 140px;}
+#search-theme-form .form-submit {
+	background: none repeat scroll 0 0 #304713;
+    border: 2px solid #98A215;
+    color: #FEDB08;
+	cursor:pointer
+}
+#search-theme-form .form-submit:hover {
+    border: 2px solid #FEDB08;
+    color: #FEDB08;
+}
+
+/**
+ * Advanced search form
+ */
+/* Advanced search-form id. */
+#search-form {}
+
+/* Use the child selector because the inner div has no class. */
+#search-form > div {}
+#search-form .container-inline {}
+#search-form #edit-keys-wrapper {}
+
+#search-form label {}
+#search-form input {}
+#search-form .form-item {}
+#search-form .form-submit {}
+
+/* Textfield styles. */
+#search-form #edit-keys-wrapper input {}
+#search-form #edit-keys-wrapper input:hover,
+#search-form #edit-keys-wrapper input:focus {}
+
+/* Advanced search fieldset. */
+#search-form fieldset.search-advanced {}
+
+/**
+ * Search results
+ */
+/* Box styles for the results page. */
+.section-search .box {}
+.section-search .box-inner {}
+.section-search .box-title {}
+
+/* Style the no results messages. */
+.section-search .box ul {}
+.section-search .box ul li {}
+
+/* Search results document list. */
+dl.search-results {}
+dl.search-results dt {}
+dl.search-results dd {}
+dl.search-results dd p {}
+dl.search-results dd .search-snippet {}
+dl.search-results dd .search-info {}
+
+span.search-info-type {}
+span.search-info-user {}
+span.search-info-date {}
+span.search-info-comment {}
+span.search-info-upload  {}
+
+
+/**********************************************************
+ *               Primary & Secondary Links
+ **********************************************************/
+/* Primary-links div wrapper */
+#primary {
+	background: none repeat scroll 0 0 #020C02;
+    border-bottom: 1px solid #020C02;
+    height: 35px;
+    padding: 0;
+}
+
+/* Class on the ul */
+.primary-links {}
+
+.expanded .primary-links li.active-trail {
+	background: none repeat scroll 0 0 #D9EDC2;
+}
+.expanded .primary-links li.active-trail a {
+	color:#304713;
+}
+/* Modify the margin to set tab spacings. */
+.primary-links li {
+	background: none repeat scroll 0 0 #304713;
+    margin: 7px 7px 0 0;
+    padding: 5px;
+}
+.primary-links li a {
+	color: #FEDB08;
+    font-weight: bold;
+	text-decoration:none;
+}
+
+/* Set pseudo class styles. */
+.primary-links li a:link {}
+.primary-links li a:visited {}
+.primary-links li a:hover {text-decoration: underline;}
+.primary-links li a:focus {}
+.primary-links li a:active {
+	text-decoration: underline;
+	color:#FEDB08;
+}
+
+/* Primary first and last classes. */
+.primary-links li.first {margin-left: 7px;}
+.primary-links li.last {}
+
+/* Active trail classes. */
+.primary-links li.active {
+	background: none repeat scroll 0 0 #F4FBEC;
+	text-decoration: underline;
+	color:#304713;
+}
+.primary-links li.active-trail {
+	background: none repeat scroll 0 0 #F4FBEC;
+	border-left: 1px solid #020C02;
+    border-right: 1px solid #020C02;
+    border-top: 1px solid #020C02;
+}
+.primary-links li.active-trail a {	
+	text-decoration: underline;
+	color:#304713;}
+
+/* Secondary-links div wrapper */
+#secondary {	
+	background: none repeat scroll 0 0 #D9EDC2;
+    border-bottom: 1px solid #304713;
+    height: 35px;
+    padding: 0;
+}
+
+/* Class on the ul */
+.secondary-links {}
+
+/* Modify the margin to set tab spacings. */
+.secondary-links li {
+	background: none repeat scroll 0 0 #304713;
+    margin: 7px 7px 0 0;
+    padding: 5px;
+}
+.secondary-links li a {
+	color: #FEDB08;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Set pseudo class styles. */
+.secondary-links li a:link {}
+.secondary-links li a:visited {}
+.secondary-links li a:hover {text-decoration: underline;}
+.secondary-links li a:focus {}
+.secondary-links li a:active {
+	text-decoration: underline;
+	color:#FEDB08;
+}
+
+/* Secondary first and last classes. */
+.secondary-links li.first {margin-left: 7px;}
+.secondary-links li.last {}
+
+/* Active trail classes. */
+.secondary-links li.active {
+	background: none repeat scroll 0 0 #F4FBEC;
+	text-decoration: underline;
+	color:#304713;
+	}
+.secondary-links li.active-trail {
+	background: none repeat scroll 0 0 #F4FBEC;
+    border-left: 1px solid #304713;
+    border-right: 1px solid #304713;
+    border-top: 1px solid #304713;
+}
+.secondary-links li.active-trail a {
+	text-decoration: underline;
+	color:#304713;
+}
+
+/**********************************************************
+ *                   Committee Menu
+ **********************************************************/
+.committee-page-menu {
+	padding:0;
+} 
+.committee-page-menu .view-content {
+}
+.committee-page-menu .view-content ul {
+	margin-left:0;
+}
+.committee-page-menu .view-content ul li {
+	margin-left:0;
+	list-style:none;
+}
+.committee-page-menu .view-content a {
+	background: none repeat scroll 0 0 #304713;
+    margin: 7px 7px 0 0;
+    padding: 5px;
+	color: #FEDB08;
+	display:block;
+	border:2px solid #98A215;
+}
+.committee-page-menu .view-content a:link {
+}
+.committee-page-menu .view-content a:visited {
+}
+.committee-page-menu .view-content a:hover {
+	border:2px solid #FEDB08;
+}
+.committee-page-menu .view-content a:focus {
+}
+.committee-page-menu .view-content a:active {
+	border:2px solid #FEDB08;
+}
+.committee-page-menu .view-content a.active {
+	border:2px solid #FEDB08;
+}
+
+/**********************************************************
+ *                    Buttons
+ **********************************************************/
+ 
+.membership-button {margin-bottom: 38px;}
+.membership-button img {margin-bottom: -13px;}
+.membership-button a {
+	font-size: 17px;
+	background: none repeat scroll 0 0 #304713;
+    padding: 8px;
+	color: #FEDB08;
+	border:3px solid #98A215;
+	padding: 16px 10px 16px 14px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+	border-radius: 15px;
+}
+.membership-button a:link {}
+.membership-button a:visited {}
+.membership-button a:hover {
+	border:2px solid #FEDB08;
+	text-decoration:none;
+}
+.membership-button a:focus {
+	border:3px solid #FEDB08;
+}
+ .membership-button a:active {
+	border:3px solid #FEDB08;
+	text-decoration:none;
+}
+
+.anonymous-links {
+	top: 4em;
+	left: 20.5em;
+    position: absolute;
+}
+.anonymous-links a {color:#FEDB08;}
+.anonymous-links a:link {}
+.anonymous-links a:visited {}
+.anonymous-links a:hover {}
+.anonymous-links a:focus {}
+.anonymous-links a:active {}
+.new-password {}
+.register-link {}
+  
+/**********************************************************
+ *                      Breadcrumb
+ **********************************************************/
+#breadcrumb {position:absolute;top:71px;color:white;}
+#breadcrumb a {color:#FEDB08;}
+#breadcrumb a:link {}
+#breadcrumb a:visited {}
+#breadcrumb a:hover {}
+#breadcrumb a:focus {}
+#breadcrumb a:active {}
+
+
+/**********************************************************
+ *                       Mission
+ **********************************************************/
+#mission {}
+
+
+/**********************************************************
+ *                    H1 Page Title
+ **********************************************************/
+h1#page-title {
+    margin: 0 0 0.6em;
+}
+
+/**********************************************************
+ *                     Pager 
+ **********************************************************/
+/* The first 2 classes provide the base pager styles. */
+ul.pager    {margin:1em;}
+ul.pager li {}
+
+/* Theme the various states of pager links. */
+ul.pager li a:link    {	
+	color: #FEDB08;
+    padding: 0.3em 0.8em;
+    text-decoration: none;
+	border: 2px solid #98A215;
+	background: none repeat scroll 0 0 #304713;
+}
+ul.pager li a:visited {}
+ul.pager li a:hover   {border: 2px solid  #FEDB08;}
+
+/* Note: .pager-current is for the current page. */
+ul.pager li.pager-item     {}
+ul.pager li.first          {}
+ul.pager li.last           {}
+ul.pager li.pager-current {	
+	color: #FEDB08;
+    padding: 0.3em 0.8em;
+    text-decoration: underline;
+	border: 2px solid  #FEDB08;
+	background: none repeat scroll 0 0 #304713;
+}
+ul.pager li.pager-first    {}
+ul.pager li.pager-previous {}
+ul.pager li.pager-next     {}
+ul.pager li.pager-last     {}
+
+/**********************************************************
+ *               Footer, Footer Message
+ **********************************************************/
+#footer {text-align:center;}
+
+#footer-region {}
+#footer-region a {}
+
+#footer-message {}
+#footer-message a {}
+
+
+/**********************************************************
+ *                 RSS Feed Icon
+ **********************************************************/
+#feed-icons {}
+#feed-icons .feed-icon {}
+#feed-icons .feed-icon img {}
+#feed-icons a.feed-icon {}
+
+
+/**********************************************************
+ *                  Generic Content Classes
+ **********************************************************/
+.title {}
+.submitted {}
+.submitted em {}
+.submitted a {}
+.content {}
+ul.links {}
+ul.links li {}
+ul.links li a {}
+
+
+/**********************************************************
+ *                      Articles (nodes)
+ **********************************************************/
+.article {}
+
+/* Teaser title (H2). */
+.article-title {}
+
+.article-title a:link,
+.article-title a:visited {}
+.article-title a:hover,
+.article-title a:focus,
+.article-title a:active {}
+
+/* User Picture. */
+.article .user-picture {}
+.article .user-picture img {}
+
+/* Submitted */
+.article .submitted {}
+.article .submitted em {}
+.article .submitted a {}
+.article .submitted a:hover {}
+.article .submitted .author {}
+.article .submitted .time {}
+
+/* Common links classes. */
+.article ul.links {}
+.article ul.links li {}
+.article ul.links li a {}
+
+/* Taxonomy terms. */
+/* Term list */
+ul.taxonomy {}
+ul.taxonomy li {}
+ul.taxonomy li a {}
+/* With vocab headers */
+ul.taxonomy li.vocab {}
+.vocab-name {}
+ul.vocab-list {}
+ul.vocab-list li {}
+ul.vocab-list li a {}
+
+/* Style module links. */
+ul.links li.node_read_more a {}
+ul.links li.comment_add a {}
+ul.links li.comment_comments a {}
+ul.links li.comment_new_comments a {}
+ul.links li.blog_usernames_blog a {}
+ul.links li.print_html a {}
+ul.links li.print_email a {}
+ul.links li.print_pdf a {}
+
+/* UL link first and last classes. */
+.article ul.links li.first {}
+.article ul.links li.last  {}
+
+/* Workflow states. */
+.article-add    {}
+.article-edit   {}
+.article-delete {}
+.article-preview  {}
+.article-sticky   {}
+.article-promoted {}
+
+/* Status. */
+.article-unpublished {}
+
+/* Theme the teaser seperatly. */
+.article-teaser {}
+
+
+/**********************************************************
+ *                     Content types
+ *              Style article types by type.
+ **********************************************************/
+.book-article  {}
+.blog-article  {}
+.forum-article {}
+.page-article  {}
+.poll-article  {}
+.story-article {}
+
+ /**
+  * Custom Content Types
+  * Replace CONTENT_TYPE with the content type
+  * machine-readable name.
+  */
+.CONTENT_TYPE-article {}
+
+
+/**********************************************************
+ *                    CCK Fields
+ **********************************************************/
+/* Wrapper for any CCK field. */
+.field {}
+
+/* Use "datetime" when creating new CCK date fields. */
+.field-type-datetime {}
+
+/* Filefield field. */
+.field-type-filefield {}
+
+/* Node reference field. */
+.field-type-nodereference {}
+
+/* User reference field. */
+.field-type-userreference {}
+
+/* Number fields. */
+.field-type-number-decimal {}
+.field-type-number-float   {}
+.field-type-number-integer {}
+
+/* Text field. */
+.field-type-text {}
+
+/**
+ * Specific field names.
+ */
+/* Underscores in field name are replaced with dashes. */
+.field-field-FIELDNAME {}
+
+
+/**********************************************************
+ *                     Comments
+ **********************************************************/
+/* Comment wrapper: wraps all comments and the comment form. */
+#comments {}
+#comments-title {}
+
+/* Wrapper class for each individual comment. */
+.comment {}
+
+/* Indentation */
+.comment .indented {}
+
+/* Comment Title (H3) */
+.comment-title {}
+.comment-title a:link,
+.comment-title a:visited {}
+.comment-title a:hover,
+.comment-title a:focus,
+.comment-title a:active {}
+
+/* Comment id (count with pound sign, see line 28 comment.tpl.php) 
+   and comment "new" notification. */
+.comment-id {}
+.comment-title .new {}
+
+
+/* User Picture */
+.comment .user-picture {}
+.comment .user-picture img {}
+
+/* Submitted */
+.comment .submitted {}
+.comment .submitted em {}
+.comment .submitted a {}
+.comment .submitted a:hover {}
+.comment .submitted .author {}
+.comment .submitted .time {}
+
+/* Links */
+.comment ul.links {}
+.comment ul.links li {}
+.comment ul.links li a {}
+
+/* Core comment link classes. */
+ul.links li.comment_reply a {}
+ul.links li.comment_edit a {}
+ul.links li.comment_delete a {}
+
+/* UL link first and last classes. */
+.comment ul.links li.first {}
+.comment ul.links li.last  {}
+
+/* Author */
+.comment-by-anonymous   {}
+.comment-by-article-author {}
+.comment-by-viewer      {}
+
+/* New */
+.comment-new {}
+
+/* Zebra */
+.comment.odd  {}
+.comment.even {}
+
+/* Status */
+.comment-unpublished {}
+
+/* Themes the "Unpublished" text. */
+.comment-unpublished .unpublished {}
+
+/* Comment box wrapper on a seperate page. */
+.section-comment .box {}
+.section-comment .box .box-title {}
+
+/* Comment box wrapper below content. */
+#comments .box {}
+#comments .box .box-title {}
+
+/* Sytle comments by article type. */
+.book-comments  {}
+.blog-comments  {}
+.forum-comments {}
+.page-comments  {}
+.poll-comments  {}
+.story-comments {}
+
+
+/**********************************************************
+ *                       Blocks
+ **********************************************************/
+/**
+ * Styles set for .block, .block-inner, block-title and 
+ * .block-content will be inherited by all blocks.
+ */
+.block {}
+.block-inner   {} /* Block inner div */
+.block-title   {} /* h2 block title */
+
+
+/**********************************************************
+ *                   Sidebar blocks
+ **********************************************************/
+/**
+ * You can target blocks in one or more regions and 
+ * style them differently. 
+ */
+ 
+/* Low specifity selector to style blocks in all regions. */
+.aside .block {}
+.aside .block h2 {}
+.aside .block-inner {}
+
+/* Low specifity selector to style blocks in both sidebars. */
+.sidebar .block {}
+.sidebar .block h2 {}
+.sidebar .block-inner {}
+
+/* High specifity selectors to style blocks in one sidebar - be careful,
+   these are powerful selectors! */
+#sidebar-first .block {}
+#sidebar-first .block h2 {}
+#sidebar-first .block-inner {}
+
+#sidebar-last .block {}
+#sidebar-last .block h2 {}
+#sidebar-last .block-inner {}
+
+
+/**********************************************************
+ *                  Region blocks
+ **********************************************************/
+/* High specifity selectors to style blocks in one region. */
+#leaderboard       .block {}
+#header-region     .block {margin:0;}
+#header-region     .block-inner {padding:0;}
+#header-region     .content {display:inline;}
+#header-region     form {margin:0;}
+#menu-bar          .block {}
+#secondary-content .block {}
+#tertiary-content  .block {}
+#content-top       .block {}
+#content           .block {}
+#content-bottom    .block {}
+#footer-region     .block {}
+
+
+/**********************************************************
+ *                   Module blocks
+ **********************************************************/
+/**
+ * Module Block ID's 
+ * For contributed module blocks the pattern is the same,
+ * i.e. #block-[module]-[delta]
+ */
+#block-book-0       {} /* Book navigation block   */
+#block-blog-0       {} /* Recent Blog posts       */
+#block-comment-0    {} /* Recent Comments block   */
+#block-forum-0      {} /* Active Forum topics     */
+#block-forum-1      {} /* New Forum topics        */
+#block-locale-0     {} /* Language Switcher block */
+#block-node-0       {} /* Syndicate block         */
+#block-poll-0       {} /* Most recent poll        */
+#block-profile-0    {} /* Author information      */
+#block-search-0     {} /* Search form block       */
+#block-statistics-0 {} /* Popular content         */
+#block-system-0     {} /* Powered by Drupal       */
+#block-user-0       {} /* Login block             */
+#block-user-1       {} /* Navigation Menu block   */
+#block-user-2       {} /* Who's New block         */
+#block-user-3       {} /* Who's Online block      */
+
+/* Primary and Secondary links blocks */
+#block-menu-primary-links   {}
+#block-menu-secondary-links {}
+
+/* The class selector applies to all blocks of these types. */
+.block-user {} 
+.block-book {} 
+.block-aggregator {}
+
+
+/**********************************************************
+ *                 Search block form
+ **********************************************************/
+#search-block-form {}
+
+/* Wrapper DIVs. */
+#search-block-form > div {}
+#search-block-form .container-inline{}
+#edit-search-block-form-1-wrapper {}
+
+#search-block-form label {}
+#search-block-form input {}
+
+#search-block-form .form-submit {}
+#search-block-form .form-text {}
+
+/* Override forms.css focus style */
+#edit-search-block-form-1:hover,
+#edit-search-block-form-1:focus {}
+
+/**********************************************************
+ *                   Forms
+ **********************************************************/
+
+select {
+    background: none repeat scroll 0 0 #304713;
+    border: 2px solid #98A215;
+    color: #FEDB08;
+    font-weight: bold;
+    margin: 0.375em 0;
+    padding: 0.3em;
+}
+.form-submit default {background-color:#304713;}
+.form-select:focus {
+    background: none repeat scroll 0 0 #304713;
+    border: 2px solid #FEDB08;
+    color: #FEDB08;
+    font-weight: bold;
+    margin: 0.375em 0;
+    padding: 0.3em;
+}
+option:hover {
+    background: none repeat scroll 0 0 #FEDB08;
+    color: #304713;
+    margin: 0;
+    padding: 0 0.3em;
+}
+option {
+    background: none repeat scroll 0 0 #304713;
+    color: #FEDB08;
+    margin: 0;
+    padding: 0 0.3em;
+}
+.form-submit {
+	background: none repeat scroll 0 0 #304713;
+    border: 2px solid #98A215;
+    color: #FEDB08;
+	cursor:pointer;
+}
+.form-submit:hover {
+    border: 2px solid #FEDB08;
+    color: #FEDB08;
+}
+
+/**********************************************************
+ *                   Menu blocks
+ **********************************************************/
+/**
+ * Prefix these with the block id to style one menu only.
+ */
+ul.menu,
+ul.menu ul, 
+ul.menu ul ul, 
+ul.menu ul ul ul {}
+
+/* Menu li styles */
+ul.menu li {}
+
+ul.menu li.collapsed {}
+ul.menu li.expanded  {}
+ul.menu li.leaf      {}
+
+ul.menu li a:link,
+ul.menu li a:visited {}
+ul.menu li a:hover,
+ul.menu li a:focus,
+ul.menu li a:active   {}
+ul.menu li.active a  {}
+ul.menu li.active-trail a {}
+
+ul.menu li.first {}
+ul.menu li.last  {}
+
+
+/**
+ * Member's menu
+ */
+.members-menu {
+	padding: 0;
+    position: absolute;
+    right: 4px;
+}
+.members-menu ul.menu,
+.members-menu ul.menu ul, 
+.members-menu ul.menu ul ul, 
+.members-menu ul.menu ul ul ul {}
+
+/* Menu li styles */
+.members-menu ul.menu li {
+    margin-right: 0.6em;
+    margin-top: 0.8em;
+}
+
+.members-menu ul.menu li a {
+	color: #FEDB08;
+    padding: 0.2em 0.6em;
+    text-decoration: none;
+	border: 2px solid #98A215;
+	background: none repeat scroll 0 0 #304713;
+	display: block;
+}
+
+.members-menu ul.menu li.collapsed {}
+.members-menu ul.menu li.expanded  {}
+.members-menu ul.menu li.leaf      {}
+
+.members-menu ul.menu li a:link,
+.members-menu ul.menu li a:visited {}
+.members-menu ul.menu li a:hover,
+.members-menu ul.menu li a:focus,
+.members-menu ul.menu li a:active   {
+	text-decoration: underline;
+	border: 2px solid  #FEDB08;
+}
+.members-menu ul.menu li.active a  {
+	text-decoration: underline;
+	border: 2px solid #FEDB08;
+}
+.members-menu ul.menu li.active-trail a {
+	text-decoration: underline;
+	border: 2px solid #FEDB08;
+}
+
+.members-menu ul.menu li.first {}
+.members-menu ul.menu li.last  {}
+
+span.button-wrapper {
+margin-left: 4px;
+}
+/**********************************************************
+ *                   Block item-list
+ **********************************************************/
+.block .item-list ul {}
+.block .item-list ul li {}
+
+
+/**********************************************************
+ *                  Gpanel blocks
+ **********************************************************/
+/* Examples to get started. Add col specific selectors to style
+   blocks in different Gpanel columns, or element selectors to
+   style specific elements */
+   
+.two-col-2x50  .block {}
+.two-col-33-66 .block {}
+.two-col-66-33 .block {}
+
+.three-col-3x33     .block {}
+.three-col-25-25-50 .block {}
+.three-col-50-25-25 .block {}
+
+.four-col-4x25 .block {}
+.five-col-5x20 .block {}
+.six-col-6x16  .block {}
+
+
+/**********************************************************
+ *                  Gpanel Regions
+ **********************************************************/
+/**
+ * NOTE: If you are adding borders, padding or margin (anything
+ * that adds width) you should apply these to the INNER div or
+ * the contained element, such as a block or mini-panel.
+ */
+
+.gpanel {}
+.gpanel .region {}
+.gpanel .region .inner {}
+.gpanel .first  .inner {}
+.gpanel .last   .inner {}
+
+/* 2 column */
+.two-col-2x50 {}
+.two-col-2x50 .region {}
+.two-col-2x50 .region .inner {}
+.two-col-2x50 .col-1  {}
+.two-col-2x50 .col-2  {}
+.two-col-2x50 .col-1 .inner {}
+.two-col-2x50 .col-2 .inner {}
+
+.two-col-33-66 {}
+.two-col-33-66 .region {}
+.two-col-33-66 .region .inner {}
+.two-col-33-66 .col-1 {}
+.two-col-33-66 .col-2 {}
+.two-col-33-66 .col-1 .inner {}
+.two-col-33-66 .col-2 .inner {}
+
+.two-col-66-33 {}
+.two-col-66-33 .region {}
+.two-col-66-33 .region .inner {}
+.two-col-66-33 .col-1 {}
+.two-col-66-33 .col-2 {}
+.two-col-66-33 .col-1 .inner {}
+.two-col-66-33 .col-2 .inner {}
+
+/* 3 column */
+.three-col-3x33 {}
+.three-col-3x33 .region {}
+.three-col-3x33 .region .inner {}
+.three-col-3x33 .col-1 {}
+.three-col-3x33 .col-2 {}
+.three-col-3x33 .col-3 {}
+.three-col-3x33 .col-1 .inner {}
+.three-col-3x33 .col-2 .inner {}
+.three-col-3x33 .col-3 .inner {}
+
+.three-col-25-25-50 {}
+.three-col-25-25-50 .region {}
+.three-col-25-25-50 .region .inner {}
+.three-col-25-25-50 .col-1 {}
+.three-col-25-25-50 .col-2 {}
+.three-col-25-25-50 .col-3 {}
+.three-col-25-25-50 .col-1 .inner {}
+.three-col-25-25-50 .col-2 .inner {}
+.three-col-25-25-50 .col-3 .inner {}
+
+.three-col-50-25-25 {}
+.three-col-50-25-25 .region {}
+.three-col-50-25-25 .region .inner {}
+.three-col-50-25-25 .col-1 {}
+.three-col-50-25-25 .col-2 {}
+.three-col-50-25-25 .col-3 {}
+.three-col-50-25-25 .col-1 .inner {}
+.three-col-50-25-25 .col-2 .inner {}
+.three-col-50-25-25 .col-3 .inner {}
+
+/* 4 column */
+.four-col-4x25 {}
+.four-col-4x25 .region {}
+.four-col-4x25 .region .inner {}
+.four-col-4x25 .section-1 {}
+.four-col-4x25 .section-2 {}
+.four-col-4x25 .col-1 {}
+.four-col-4x25 .col-2 {}
+.four-col-4x25 .col-3 {}
+.four-col-4x25 .col-4 {}
+.four-col-4x25 .col-1 .inner {}
+.four-col-4x25 .col-2 .inner {}
+.four-col-4x25 .col-3 .inner {}
+.four-col-4x25 .col-4 .inner {}
+
+/* 5 column */
+.five-col-5x20 {}
+.five-col-5x20 .region {}
+.five-col-5x20 .region .inner {}
+.five-col-5x20 .col-1 {}
+.five-col-5x20 .col-2 {}
+.five-col-5x20 .col-3 {}
+.five-col-5x20 .col-4 {}
+.five-col-5x20 .col-5 {}
+.five-col-5x20 .col-1 .inner {}
+.five-col-5x20 .col-2 .inner {}
+.five-col-5x20 .col-3 .inner {}
+.five-col-5x20 .col-4 .inner {}
+.five-col-5x20 .col-5 .inner {}
+
+/* 6 column */
+.six-col-6x16 {}
+.six-col-6x16 .region {}
+.six-col-6x16 .region .inner {}
+.six-col-6x16 .col-1 {}
+.six-col-6x16 .col-2 {}
+.six-col-6x16 .col-3 {}
+.six-col-6x16 .col-4 {}
+.six-col-6x16 .col-5 {}
+.six-col-6x16 .col-6 {}
+.six-col-6x16 .col-1 .inner {}
+.six-col-6x16 .col-2 .inner {}
+.six-col-6x16 .col-3 .inner {}
+.six-col-6x16 .col-4 .inner {}
+.six-col-6x16 .col-5 .inner {}
+.six-col-6x16 .col-6 .inner {}
+
+
+/**********************************************************
+                      AT Panels
+    Classes for styling the built in Panels Layouts
+    You need the Panels 3 module installed to use the
+    built in panels and the Adaptivetheme base theme
+    must be enabled.
+ **********************************************************/
+.panel-col {}
+.panel-col .inside {}
+.panel-pane {}
+
+.sixcol-6x16 {}
+.fivecol-5x20 {}
+.fourcol-4x25 {}
+
+.threecol-at-25-25-50 {}
+.threecol-at-50-25-25 {}
+
+.twocol-at-33-66 {}
+.twocol-at-66-33 {}
+
+.threecol-at-stacked-inset {}
+.twocol-at-stacked-inset {}
+
+
+/**********************************************************
+ *                 AT Button Wrappers
+ **********************************************************/
+/**
+ * Adaptivetheme wraps input buttons with SPANs for
+ * easy theming.
+ */
+ span.button-wrapper {} /* Outer wrapper */
+ span.button {} /* Inner wrapper */
+
+
+/**********************************************************
+ *                       Tables
+ **********************************************************/
+/**
+ * The selector groupings are from Garland which offers a
+ * sensible starting point for styling Drupal tables.
+ */
+table {}
+
+caption, th, td {}
+caption, th {}
+
+table, td, th {}
+tbody, tfoot, thead, tr {}
+thead th {}
+td, th {}
+
+tr.even, tr.odd, tbody th {}
+tr.odd, tr.info {}
+tr.even {}
+
+tr.drag {}
+tr.drag-previous  {}
+
+tr.odd td.active  {}
+tr.even td.active {}
+
+td.region,
+td.module,
+td.container td.category {}
+
+tr:first-child td.region,
+tr:first-child td.module,
+tr:first-child td.container {}
+
+
+/**********************************************************
+ *                   Forum Tables
+ **********************************************************/
+#forum table {}
+#forum tr td.forum {}
+#forum tr td.forum .name {}
+#forum div.indent {}
+
+/**********************************************************
+ *                   Carousels
+ **********************************************************/
+
+.ui-carousel .ui-carousel-slide {
+padding:0;
+margin:0;
+}
+
+#uicarousel-premium-member-logos-block-1 .ui-carousel-clip, #uicarousel-premium-member-logos-block-2  .ui-carousel-clip {
+	background-color: white;
+    height: 9.4em;
+    left: 14.7em;
+}
+#uicarousel-premium-member-logos-block-1, #uicarousel-premium-member-logos-block-2 {
+    background-color: white;
+    margin-left: 3em;
+    overflow: hidden;
+    width: 80.5em;
+	height: 9.3em;
+}
+#uicarousel-premium-member-logos-block-1 .ui-carousel-horizontal a.ui-carousel-prev:active, #uicarousel-premium-member-logos-block-2 .ui-carousel-horizontal a.ui-carousel-prev:active {
+    background: url("../images/bccgb-carousel-simple.png") no-repeat scroll 0 -132px transparent;
+}
+
+.ui-carousel-horizontal a.ui-carousel-prev {
+    background: url("../images/bccgb-carousel-simple.png") no-repeat scroll 0 top transparent;
+    height: 36px;
+    margin-top: 36px;
+    overflow: hidden;
+	outline:none;
+}
+.ui-carousel a.ui-carousel-prev {
+    left: 0;
+    position: absolute;
+    text-indent: -10000px;
+    width: 30px;
+    z-index: 100;
+	outline:none;
+}
+
+.ui-carousel-horizontal a.ui-carousel-prev:hover {
+    background: url("../images/bccgb-carousel-simple.png") no-repeat scroll 0 -33px transparent;
+}
+
+.ui-carousel-horizontal a.ui-carousel-next:active {
+    background: url("../images/bccgb-carousel-simple.png") no-repeat scroll -38px -132px transparent;
+}
+.ui-carousel a.ui-carousel-next {
+    left: 84.6em;
+    position: absolute;
+    text-indent: -10000px;
+    width: 30px;
+    z-index: 100;
+	outline:none;
+}
+.ui-carousel-horizontal a.ui-carousel-next {
+    background: url("../images/bccgb-carousel-simple.png") no-repeat scroll -38px 0 transparent;
+    height: 36px;
+    margin-top: 36px;
+    overflow: hidden;
+	outline:none;
+}
+
+.ui-carousel-horizontal a.ui-carousel-next:hover {
+    background: url("../images/bccgb-carousel-simple.png") no-repeat scroll -38px -33px transparent;
+}
+
+.premium-members-carousel-header {
+    background-color: white;
+    height: 4.6em;
+    left: 1.7em;
+    padding: 0.6em;
+    position: absolute;
+    top: 0.1em;
+    width: 10em;
+}
+
+.ui-carousel li {
+    float: left;
+	list-style:none;
+}
+.ui-carousel img {}
+/**********************************************************
+ *                   Calendars
+ **********************************************************/
+ 
+.calendar-calendar {
+}
+.calendar-calendar ul {
+margin:1em 0;
+}
+.calendar-calendar ul li {
+}
+
+.calendar-calendar ul li a {
+	color: #FEDB08;
+    padding: 0.3em 0.8em;
+    text-decoration: none;
+	border: 2px solid #98A215;
+	background: none repeat scroll 0 0 #304713;
+}
+
+.calendar-calendar ul li.collapsed {}
+.calendar-calendar ul li.expanded  {}
+.calendar-calendar ul li.leaf      {}
+
+.calendar-calendar ul li a:link,
+.calendar-calendar ul li a:visited {}
+.calendar-calendar ul li a:hover,
+.calendar-calendar ul li a:focus,
+.calendar-calendar ul li a:active   {
+	text-decoration: underline;
+	border: 2px solid  #FEDB08;
+}
+.calendar-calendar ul li.active a  {
+	text-decoration: underline;
+	border: 2px solid #FEDB08;
+}
+.calendar-calendar ul li.active-trail a {
+	text-decoration: underline;
+	border: 2px solid #FEDB08;
+}
+
+.calendar-calendar ul li.first {}
+.calendar-calendar ul li.last  {}
+
+/**********************************************************
+ *                   Views
+ **********************************************************/
+
+.views-row {
+	margin:0 0 2.2em;
+}
+
+.views-row p {
+	margin:0 0 0.5em;
+}
+
+#main-content-header {
+	margin:0 0 2em;
+}
+
+/**********************************************************
+ *                  Events
+ **********************************************************/
+ .past-events {}
+ .upcoming-events {margin-right: 16px;}
+ .event-listings {
+	background: none repeat scroll 0 0 white;
+    display: inline-block;
+    width: 462px;
+}
+.event_description-section {
+}
+
+/**********************************************************
+ *                  Profile page
+ **********************************************************/
+.view-profile-page 
+{
+}
+.view-profile-page .content
+{
+	font-weight:bold;
+}
+.view-profile-page label
+{
+	float: left;
+	text-align: right;
+	width: 14.5em;
+	padding-right: 1em;
+	font-weight:normal;
+}
+.view-profile-page  h1 {
+margin-bottom: 0.4em;
+}
+.view-profile-page  {
+margin-top: 1em;
+margin-bottom: 0.6em;
+}
+.view-display-id-attachment_3 
+{
+}
+.view-display-id-page_1 .view-content {}
+
+.view-display-id-attachment_1 {}
+
+/**********************************************************
+ *                  Accordions
+ **********************************************************/
+.accordion-header {
+	color: #304713;
+	font-size: 1.13em;
+}
+.views-accordion-item .accordion-header, h3.accordion-header {
+    background-color: #F4F4F4;
+}
+.accordion-item-even .accordion-header {
+    background-color: #EDEDED;
+}
+.accordion-content label {
+	float: left;
+    padding-right: 0.6em;
+    text-align: right;
+    width: 10em;
+	font-weight:normal;
+}
+.accordion-content {font-weight: bold;}
+.views-field-street-address{line-height: 0.6;}
+.views-field-supplemental-address-1 {line-height: 0.6;margin-left:10.6em;}
+.views-field-city {line-height: 0.6;margin-left:10.6em;}
+.views-field-city {line-height: 0.6;margin-left:10.6em;}
+.views-field-postal-code {line-height: 0.6;margin-left:10.6em;}
+.views-field-phone {}
+.views-field-image-URL {}
+
+.crm-recentview-wrapper {margin-left:0;margin-top:20px;}
+#crm-container #help, #crm-container .help {
+padding: 4px 4px 12px 36px;
+}
+
+/**********************************************************
+ *                  Recently viewed
+ **********************************************************/
+div#recently-viewed ul {margin:0; padding:0;}
+div#recently-viewed ul li {
+margin: 1px;
+padding: 1px 1px 4px 3px;
+border: 1px solid #D7D7D0;
+background-color: white;
+white-space: nowrap;
+list-style-type: none;
+-moz-border-radius: 4px;
+-webkit-border-radius: 4px;
+-khtml-border-radius: 4px;
+border-radius: 4px;
+}
+div#recently-viewed ul li.crm-recentview-active {background-color: #FFC;}
+#crm-container #recently-viewed a, div#recently-viewed a {
+font-weight: normal;
+color: #4A88DF;
+text-decoration: none;
+font-size: .95em;
+}
+div#recently-viewed ul li.crm-recently-viewed ul {
+position: absolute;
+z-index: 99;
+background-color: FFFFCC;
+overflow: visible;
+list-style-type: none;
+margin: 0px;
+}
+div#recently-viewed ul li.crm-recently-viewed ul li {
+font-size: 1.1em;
+background-color: #304713;
+margin: 0px;
+border: 1px solid #FEDB08;
+text-align: center;
+-moz-border-radius: 0px 4px 4px 4px;
+-webkit-border-radius: 0px 4px 4px 4px;
+-khtml-border-radius: 0px 4px 4px 4px;
+border-radius: 0px 4px 4px 4px;
+padding-top: 0.4em;
+width: 150px;
+}
+#crm-container #recently-viewed a, div#recently-viewed a {
+font-weight: normal;
+color: #4A88DF;
+text-decoration: none;
+font-size: .95em;
+}
+#crm-container #recently-viewed ul li ul li a, div#recently-viewed ul li ul li a {
+font-weight: normal;
+color: #FEDB08;
+text-decoration: none;
+font-size: .95em;
+}
+#crm-container #recently-viewed ul li ul li a:hover, div#recently-viewed ul li ul li a:hover {
+text-decoration: underline;
+}
